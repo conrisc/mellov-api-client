@@ -21,4 +21,3 @@ src/model/NoteItem.js
 src/model/SongItem.js
 src/model/TagItem.js
 src/model/YtVideoItem.js
-test/model/ItemCreated.spec.js

@@ -6,8 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addNote**](UsersApi.md#addNote) | **POST** /notes | Add note
 [**addSong**](UsersApi.md#addSong) | **POST** /songs | Add song
+[**addTag**](UsersApi.md#addTag) | **POST** /tags | Add tag
 [**deleteNote**](UsersApi.md#deleteNote) | **DELETE** /notes/{noteId} | Delete note
 [**deleteSong**](UsersApi.md#deleteSong) | **DELETE** /songs/{songId} | Delete song
+[**deleteTag**](UsersApi.md#deleteTag) | **DELETE** /tags/{tagId} | Delete tag
 [**searchNote**](UsersApi.md#searchNote) | **GET** /notes/{noteId} | Search note
 [**searchNotes**](UsersApi.md#searchNotes) | **GET** /notes | Search notes
 [**searchSongs**](UsersApi.md#searchSongs) | **GET** /songs | Search songs
@@ -118,6 +120,56 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## addTag
+
+> ItemCreated addTag(tagItem)
+
+Add tag
+
+Add tag
+
+### Example
+
+```javascript
+import MellovApi from 'mellov_api';
+let defaultClient = MellovApi.ApiClient.instance;
+// Configure API key authorization: MellovAuthorizer
+let MellovAuthorizer = defaultClient.authentications['MellovAuthorizer'];
+MellovAuthorizer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//MellovAuthorizer.apiKeyPrefix = 'Token';
+
+let apiInstance = new MellovApi.UsersApi();
+let tagItem = new MellovApi.TagItem(); // TagItem | Tag to add
+apiInstance.addTag(tagItem).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tagItem** | [**TagItem**](TagItem.md)| Tag to add | 
+
+### Return type
+
+[**ItemCreated**](ItemCreated.md)
+
+### Authorization
+
+[MellovAuthorizer](../README.md#MellovAuthorizer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## deleteNote
 
 > deleteNote(noteId)
@@ -203,6 +255,56 @@ apiInstance.deleteSong(songId).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **songId** | **String**| The song Id | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[MellovAuthorizer](../README.md#MellovAuthorizer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## deleteTag
+
+> deleteTag(tagId)
+
+Delete tag
+
+Delete tag
+
+### Example
+
+```javascript
+import MellovApi from 'mellov_api';
+let defaultClient = MellovApi.ApiClient.instance;
+// Configure API key authorization: MellovAuthorizer
+let MellovAuthorizer = defaultClient.authentications['MellovAuthorizer'];
+MellovAuthorizer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//MellovAuthorizer.apiKeyPrefix = 'Token';
+
+let apiInstance = new MellovApi.UsersApi();
+let tagId = "tagId_example"; // String | The tag Id
+apiInstance.deleteTag(tagId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tagId** | **String**| The tag Id | 
 
 ### Return type
 
