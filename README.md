@@ -102,7 +102,8 @@ var MellovApi = require('mellov_api');
 
 
 var api = new MellovApi.CORSApi()
-api.songsOptions().then(function() {
+var noteId = "noteId_example"; // {String} The note Id
+api.notesNoteIdOptions(noteId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -117,16 +118,28 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*MellovApi.CORSApi* | [**notesNoteIdOptions**](docs/CORSApi.md#notesNoteIdOptions) | **OPTIONS** /notes/{noteId} | CORS support
+*MellovApi.CORSApi* | [**notesOptions**](docs/CORSApi.md#notesOptions) | **OPTIONS** /notes | CORS support
 *MellovApi.CORSApi* | [**songsOptions**](docs/CORSApi.md#songsOptions) | **OPTIONS** /songs | CORS support
 *MellovApi.CORSApi* | [**tagsOptions**](docs/CORSApi.md#tagsOptions) | **OPTIONS** /tags | CORS support
 *MellovApi.CORSApi* | [**ytItemsOptions**](docs/CORSApi.md#ytItemsOptions) | **OPTIONS** /yt-items | CORS support
+*MellovApi.UsersApi* | [**addNote**](docs/UsersApi.md#addNote) | **POST** /notes | Add note
+*MellovApi.UsersApi* | [**addSong**](docs/UsersApi.md#addSong) | **POST** /songs | Add song
+*MellovApi.UsersApi* | [**deleteNote**](docs/UsersApi.md#deleteNote) | **DELETE** /notes/{noteId} | Delete note
+*MellovApi.UsersApi* | [**deleteSong**](docs/UsersApi.md#deleteSong) | **DELETE** /songs/{songId} | Delete song
+*MellovApi.UsersApi* | [**searchNote**](docs/UsersApi.md#searchNote) | **GET** /notes/{noteId} | Search note
+*MellovApi.UsersApi* | [**searchNotes**](docs/UsersApi.md#searchNotes) | **GET** /notes | Search notes
 *MellovApi.UsersApi* | [**searchSongs**](docs/UsersApi.md#searchSongs) | **GET** /songs | Search songs
 *MellovApi.UsersApi* | [**searchTags**](docs/UsersApi.md#searchTags) | **GET** /tags | Search tags
 *MellovApi.UsersApi* | [**searchYtItems**](docs/UsersApi.md#searchYtItems) | **GET** /yt-items | Search yt items
+*MellovApi.UsersApi* | [**updateNote**](docs/UsersApi.md#updateNote) | **PUT** /notes/{noteId} | Update note
+*MellovApi.UsersApi* | [**updateSong**](docs/UsersApi.md#updateSong) | **PUT** /songs/{songId} | Update song
 
 
 ## Documentation for Models
 
+ - [MellovApi.ItemCreated](docs/ItemCreated.md)
+ - [MellovApi.NoteItem](docs/NoteItem.md)
  - [MellovApi.SongItem](docs/SongItem.md)
  - [MellovApi.TagItem](docs/TagItem.md)
  - [MellovApi.YtVideoItem](docs/YtVideoItem.md)

@@ -3,6 +3,8 @@
 .travis.yml
 README.md
 docs/CORSApi.md
+docs/ItemCreated.md
+docs/NoteItem.md
 docs/SongItem.md
 docs/TagItem.md
 docs/UsersApi.md
@@ -14,7 +16,9 @@ src/ApiClient.js
 src/api/CORSApi.js
 src/api/UsersApi.js
 src/index.js
+src/model/ItemCreated.js
+src/model/NoteItem.js
 src/model/SongItem.js
 src/model/TagItem.js
 src/model/YtVideoItem.js
-test/model/YtVideoItem.spec.js
+test/model/ItemCreated.spec.js

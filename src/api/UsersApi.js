@@ -13,6 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import ItemCreated from '../model/ItemCreated';
+import NoteItem from '../model/NoteItem';
 import SongItem from '../model/SongItem';
 import TagItem from '../model/TagItem';
 import YtVideoItem from '../model/YtVideoItem';
@@ -35,6 +37,294 @@ export default class UsersApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+
+    /**
+     * Add note
+     * Add note
+     * @param {module:model/NoteItem} noteItem Note to add
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemCreated} and HTTP response
+     */
+    addNoteWithHttpInfo(noteItem) {
+      let postBody = noteItem;
+      // verify the required parameter 'noteItem' is set
+      if (noteItem === undefined || noteItem === null) {
+        throw new Error("Missing the required parameter 'noteItem' when calling addNote");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['MellovAuthorizer'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ItemCreated;
+      return this.apiClient.callApi(
+        '/notes', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add note
+     * Add note
+     * @param {module:model/NoteItem} noteItem Note to add
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemCreated}
+     */
+    addNote(noteItem) {
+      return this.addNoteWithHttpInfo(noteItem)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Add song
+     * Add song
+     * @param {module:model/SongItem} songItem Song to add
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemCreated} and HTTP response
+     */
+    addSongWithHttpInfo(songItem) {
+      let postBody = songItem;
+      // verify the required parameter 'songItem' is set
+      if (songItem === undefined || songItem === null) {
+        throw new Error("Missing the required parameter 'songItem' when calling addSong");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['MellovAuthorizer'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ItemCreated;
+      return this.apiClient.callApi(
+        '/songs', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Add song
+     * Add song
+     * @param {module:model/SongItem} songItem Song to add
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemCreated}
+     */
+    addSong(songItem) {
+      return this.addSongWithHttpInfo(songItem)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete note
+     * Delete note
+     * @param {String} noteId The note Id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteNoteWithHttpInfo(noteId) {
+      let postBody = null;
+      // verify the required parameter 'noteId' is set
+      if (noteId === undefined || noteId === null) {
+        throw new Error("Missing the required parameter 'noteId' when calling deleteNote");
+      }
+
+      let pathParams = {
+        'noteId': noteId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['MellovAuthorizer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/notes/{noteId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete note
+     * Delete note
+     * @param {String} noteId The note Id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteNote(noteId) {
+      return this.deleteNoteWithHttpInfo(noteId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete song
+     * Delete song
+     * @param {String} songId The song Id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteSongWithHttpInfo(songId) {
+      let postBody = null;
+      // verify the required parameter 'songId' is set
+      if (songId === undefined || songId === null) {
+        throw new Error("Missing the required parameter 'songId' when calling deleteSong");
+      }
+
+      let pathParams = {
+        'songId': songId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['MellovAuthorizer'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/songs/{songId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Delete song
+     * Delete song
+     * @param {String} songId The song Id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteSong(songId) {
+      return this.deleteSongWithHttpInfo(songId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Search note
+     * Find note
+     * @param {String} noteId The note Id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NoteItem} and HTTP response
+     */
+    searchNoteWithHttpInfo(noteId) {
+      let postBody = null;
+      // verify the required parameter 'noteId' is set
+      if (noteId === undefined || noteId === null) {
+        throw new Error("Missing the required parameter 'noteId' when calling searchNote");
+      }
+
+      let pathParams = {
+        'noteId': noteId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['MellovAuthorizer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = NoteItem;
+      return this.apiClient.callApi(
+        '/notes/{noteId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Search note
+     * Find note
+     * @param {String} noteId The note Id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NoteItem}
+     */
+    searchNote(noteId) {
+      return this.searchNoteWithHttpInfo(noteId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Search notes
+     * Find notes
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.skip number of records to skip for pagination
+     * @param {Number} opts.limit maximum number of records to return
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/NoteItem>} and HTTP response
+     */
+    searchNotesWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'skip': opts['skip'],
+        'limit': opts['limit']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['MellovAuthorizer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [NoteItem];
+      return this.apiClient.callApi(
+        '/notes', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Search notes
+     * Find notes
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.skip number of records to skip for pagination
+     * @param {Number} opts.limit maximum number of records to return
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/NoteItem>}
+     */
+    searchNotes(opts) {
+      return this.searchNotesWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -165,8 +455,8 @@ export default class UsersApi {
       let pathParams = {
       };
       let queryParams = {
-        'title': title,
-        'limit': opts['limit']
+        'limit': opts['limit'],
+        'title': title
       };
       let headerParams = {
       };
@@ -194,6 +484,114 @@ export default class UsersApi {
      */
     searchYtItems(title, opts) {
       return this.searchYtItemsWithHttpInfo(title, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update note
+     * Update note
+     * @param {String} noteId The note Id
+     * @param {module:model/NoteItem} noteItem Note to add
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    updateNoteWithHttpInfo(noteId, noteItem) {
+      let postBody = noteItem;
+      // verify the required parameter 'noteId' is set
+      if (noteId === undefined || noteId === null) {
+        throw new Error("Missing the required parameter 'noteId' when calling updateNote");
+      }
+      // verify the required parameter 'noteItem' is set
+      if (noteItem === undefined || noteItem === null) {
+        throw new Error("Missing the required parameter 'noteItem' when calling updateNote");
+      }
+
+      let pathParams = {
+        'noteId': noteId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['MellovAuthorizer'];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/notes/{noteId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update note
+     * Update note
+     * @param {String} noteId The note Id
+     * @param {module:model/NoteItem} noteItem Note to add
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    updateNote(noteId, noteItem) {
+      return this.updateNoteWithHttpInfo(noteId, noteItem)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update song
+     * Update song
+     * @param {String} songId The song Id
+     * @param {module:model/SongItem} songItem Song to update
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SongItem} and HTTP response
+     */
+    updateSongWithHttpInfo(songId, songItem) {
+      let postBody = songItem;
+      // verify the required parameter 'songId' is set
+      if (songId === undefined || songId === null) {
+        throw new Error("Missing the required parameter 'songId' when calling updateSong");
+      }
+      // verify the required parameter 'songItem' is set
+      if (songItem === undefined || songItem === null) {
+        throw new Error("Missing the required parameter 'songItem' when calling updateSong");
+      }
+
+      let pathParams = {
+        'songId': songId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['MellovAuthorizer'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = SongItem;
+      return this.apiClient.callApi(
+        '/songs/{songId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update song
+     * Update song
+     * @param {String} songId The song Id
+     * @param {module:model/SongItem} songItem Song to update
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SongItem}
+     */
+    updateSong(songId, songItem) {
+      return this.updateSongWithHttpInfo(songId, songItem)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

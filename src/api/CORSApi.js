@@ -37,6 +37,95 @@ export default class CORSApi {
     /**
      * CORS support
      * Enable CORS by returning correct headers 
+     * @param {String} noteId The note Id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    notesNoteIdOptionsWithHttpInfo(noteId) {
+      let postBody = null;
+      // verify the required parameter 'noteId' is set
+      if (noteId === undefined || noteId === null) {
+        throw new Error("Missing the required parameter 'noteId' when calling notesNoteIdOptions");
+      }
+
+      let pathParams = {
+        'noteId': noteId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/notes/{noteId}', 'OPTIONS',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * CORS support
+     * Enable CORS by returning correct headers 
+     * @param {String} noteId The note Id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    notesNoteIdOptions(noteId) {
+      return this.notesNoteIdOptionsWithHttpInfo(noteId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * CORS support
+     * Enable CORS by returning correct headers 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    notesOptionsWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/notes', 'OPTIONS',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * CORS support
+     * Enable CORS by returning correct headers 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    notesOptions() {
+      return this.notesOptionsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * CORS support
+     * Enable CORS by returning correct headers 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     songsOptionsWithHttpInfo() {

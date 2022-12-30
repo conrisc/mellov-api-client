@@ -13,6 +13,8 @@
 
 
 import ApiClient from './ApiClient';
+import ItemCreated from './model/ItemCreated';
+import NoteItem from './model/NoteItem';
 import SongItem from './model/SongItem';
 import TagItem from './model/TagItem';
 import YtVideoItem from './model/YtVideoItem';
@@ -57,6 +59,18 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
+
+    /**
+     * The ItemCreated model constructor.
+     * @property {module:model/ItemCreated}
+     */
+    ItemCreated,
+
+    /**
+     * The NoteItem model constructor.
+     * @property {module:model/NoteItem}
+     */
+    NoteItem,
 
     /**
      * The SongItem model constructor.
