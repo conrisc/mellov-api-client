@@ -2,11 +2,11 @@ import { ResponseContext, RequestContext, HttpFile } from '../http/http';
 import { Configuration} from '../configuration'
 import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
-import { ItemCreated } from '..\models\ItemCreated';
-import { NoteItem } from '..\models\NoteItem';
-import { SongItem } from '..\models\SongItem';
-import { TagItem } from '..\models\TagItem';
-import { YtVideoItem } from '..\models\YtVideoItem';
+import { ItemCreated } from '../models/ItemCreated';
+import { NoteItem } from '../models/NoteItem';
+import { SongItem } from '../models/SongItem';
+import { TagItem } from '../models/TagItem';
+import { YtVideoItem } from '../models/YtVideoItem';
 
 import { CORSApiRequestFactory, CORSApiResponseProcessor} from "../apis/CORSApi";
 export class ObservableCORSApi {

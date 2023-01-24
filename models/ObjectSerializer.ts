@@ -1,14 +1,14 @@
-export * from '..\models\ItemCreated';
-export * from '..\models\NoteItem';
-export * from '..\models\SongItem';
-export * from '..\models\TagItem';
-export * from '..\models\YtVideoItem';
+export * from '../models/ItemCreated';
+export * from '../models/NoteItem';
+export * from '../models/SongItem';
+export * from '../models/TagItem';
+export * from '../models/YtVideoItem';
 
-import { ItemCreated } from '..\models\ItemCreated';
-import { NoteItem } from '..\models\NoteItem';
-import { SongItem } from '..\models\SongItem';
-import { TagItem } from '..\models\TagItem';
-import { YtVideoItem } from '..\models\YtVideoItem';
+import { ItemCreated } from '../models/ItemCreated';
+import { NoteItem } from '../models/NoteItem';
+import { SongItem } from '../models/SongItem';
+import { TagItem } from '../models/TagItem';
+import { YtVideoItem } from '../models/YtVideoItem';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [

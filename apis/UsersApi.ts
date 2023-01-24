@@ -8,11 +8,11 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { ItemCreated } from '..\models\ItemCreated';
-import { NoteItem } from '..\models\NoteItem';
-import { SongItem } from '..\models\SongItem';
-import { TagItem } from '..\models\TagItem';
-import { YtVideoItem } from '..\models\YtVideoItem';
+import { ItemCreated } from '../models/ItemCreated';
+import { NoteItem } from '../models/NoteItem';
+import { SongItem } from '../models/SongItem';
+import { TagItem } from '../models/TagItem';
+import { YtVideoItem } from '../models/YtVideoItem';
 
 /**
  * no description

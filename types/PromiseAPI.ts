@@ -1,11 +1,11 @@
 import { ResponseContext, RequestContext, HttpFile } from '../http/http';
 import { Configuration} from '../configuration'
 
-import { ItemCreated } from '..\models\ItemCreated';
-import { NoteItem } from '..\models\NoteItem';
-import { SongItem } from '..\models\SongItem';
-import { TagItem } from '..\models\TagItem';
-import { YtVideoItem } from '..\models\YtVideoItem';
+import { ItemCreated } from '../models/ItemCreated';
+import { NoteItem } from '../models/NoteItem';
+import { SongItem } from '../models/SongItem';
+import { TagItem } from '../models/TagItem';
+import { YtVideoItem } from '../models/YtVideoItem';
 import { ObservableCORSApi } from './ObservableAPI';
 
 import { CORSApiRequestFactory, CORSApiResponseProcessor} from "../apis/CORSApi";
